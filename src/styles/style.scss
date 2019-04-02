@@ -1,0 +1,97 @@
+@import "mixins";
+@import "params";
+
+html, body
+{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper
+{
+  width: 100%;
+  height: 100%;
+
+  background: $wrapper-background;
+
+  a,
+  a:link,
+  a:visited,
+  a:focus,
+  {
+    color: $wrapper-a-color;
+    text-decoration: $wrapper-a-text-decoration;
+  }
+
+  a:hover
+  {
+    color: $wrapper-a-hover-color;
+    text-decoration: $wrapper-a-hover-text-decoration;
+  }
+
+  a:active
+  {
+    color: $wrapper-a-active-color;
+    text-decoration: $wrapper-a-active-text-decoration;
+  }
+
+  .countdown-box
+  {
+    position: relative;
+    top: 50%;
+    width: 60%;
+    margin: 0 auto;
+    transform: translateY(-50%);
+
+    background: $countdown-box-background;
+    border-radius: $countdown-box-border-radius;
+
+    @include box-shadow($countdown-box-box-shadow-h-offset,
+        $countdown-box-box-shadow-v-offset,
+        $countdown-box-box-shadow-blur,
+        $countdown-box-box-shadow-spread,
+        $countdown-box-box-shadow-color);
+
+    %child
+    {
+      width: $countdown-box-child-width;
+      padding: (100% - $countdown-box-child-width) / 2;
+      font-family: $countdown-box-font-family;
+      text-align: center;
+    }
+
+    .title
+    {
+      @extend %child;
+      font-size: $countdown-box-title-font-size;
+      color: $countdown-box-title-color;
+    }
+
+    .countdown
+    {
+      @extend %child;
+      font-size: $countdown-box-countdown-font-size;
+      color: $countdown-box-countdown-color;
+      background: $countdown-box-countdown-background;
+    }
+
+    .footer
+    {
+      @extend %child;
+      font-size: $countdown-box-footer-font-size;
+      color: $countdown-box-footer-color;
+
+      div
+      {
+        margin-bottom: 10px;
+      }
+
+      div:last-child
+      {
+        margin: 0;
+      }
+    }
+  }
+}
