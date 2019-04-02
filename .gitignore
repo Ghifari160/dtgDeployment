@@ -3,3 +3,5 @@
 
 dist/*
 !dist/index.html
+
+node_modules/*
