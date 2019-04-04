@@ -69,6 +69,13 @@ html, body
       color: $countdown-box-title-color;
     }
 
+    .title.smaller
+    {
+      @extend %child;
+      font-size: $countdown-box-title-smaller-font-size;
+      color: $countdown-box-title-color;
+    }
+
     .countdown
     {
       @extend %child;
@@ -91,6 +98,30 @@ html, body
       div:last-child
       {
         margin: 0;
+      }
+
+      .buttons
+      {
+        height: 32px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        text-align: center;
+
+        .btn
+        {
+          display: inline-block;
+          vertical-align: top;
+          width: 32px;
+          height: 32px;
+          margin-right: 5px;
+          background: #fff;
+          cursor: pointer;
+        }
+
+        .btn:last-child
+        {
+          margin-right: none;
+        }
       }
     }
   }

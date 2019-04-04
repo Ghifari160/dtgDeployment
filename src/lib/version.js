@@ -2,7 +2,7 @@ const version = {
   major: 0,
   minor: 2,
   patch: 0,
-  prerelease: [2019, 4, 4, "00e62f"],
+  prerelease: [2019, 4, 4, "227d04"],
   meta: [],
 
   getPreRelease: function()

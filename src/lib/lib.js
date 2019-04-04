@@ -41,5 +41,6 @@ function schoolDaysTillGrad()
 }
 
 module.exports = {
-  daysTillGrad: daysTillGrad
+  daysTillGrad: daysTillGrad,
+  schoolDaysTillGrad: schoolDaysTillGrad
 };
