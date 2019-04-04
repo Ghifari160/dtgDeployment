@@ -1,7 +1,7 @@
 .DS_Store
 *.DS_Store
 
-dist/*
-!dist/index.html
+docs/*
+!docs/index.html
 
 node_modules/*
