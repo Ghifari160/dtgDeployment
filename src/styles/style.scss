@@ -107,20 +107,35 @@ html, body
         margin-bottom: 20px;
         text-align: center;
 
-        .btn
+        %btn
         {
           display: inline-block;
           vertical-align: top;
-          width: 32px;
-          height: 32px;
+          width: 50px;
+          height: 50px;
           margin-right: 5px;
-          background: #fff;
           cursor: pointer;
         }
 
-        .btn:last-child
+        %btn:last-child
         {
-          margin-right: none;
+          margin-right: 0;
+        }
+
+        .school-days
+        {
+          @extend %btn;
+          background: url("../images/school-day.svg");
+          background-size: 50px 50px;
+          background-position: center center;
+        }
+
+        .calendar-days
+        {
+          @extend %btn;
+          background: url("../images/calendar-day.svg");
+          background-size: 50px 50px;
+          background-position: center center;
         }
       }
     }

@@ -35,8 +35,6 @@ function onload()
 
       this.classList.remove("school-days");
       this.classList.add("calendar-days");
-
-      this.innerHTML = "CD";
     }
     else if(this.classList.contains("calendar-days"))
     {
@@ -53,8 +51,6 @@ function onload()
 
       this.classList.remove("calendar-days");
       this.classList.add("school-days");
-
-      this.innerHTML = "SD";
     }
   }
 
