@@ -19,25 +19,35 @@ function daysTillGrad()
 // Gets the number of school days until graduation
 function schoolDaysTillGrad()
 {
-  var today = getToday();
-  var ret = 0;
+  var today = getToday(),
+      daysBetween = daysTillGrad(), // Number of calendar days to graduation
+      nSaturdays,
+      diff;
 
-  var iStart = 0;
-  for(var i = nsd.length; i > -1; i--)
+  // Find the number of Saturdays between today and the graduation day
+  nSaturdays = Math.floor((today.getDay() + daysBetween) / 7);
+  // Store twice the number of Saturdays between today and the graduation day
+  // (Saturday and Sunday = 2 * Saturday)
+  diff = nSaturdays * 2;
+
+  // Find the applicable starting position of the non-school days list
+  var nsdStart = 0;
+  var loopDone = false;
+  for(var i = 0; i < nsd.length; i++)
   {
-    if(today > nsd[i])
-      iStart = i;
+    if(!loopDone && today < nsd[i])
+    {
+      nsdStart = i;
+      loopDone = true;
+    }
   }
 
-  var boundLower = today;
-  for(var i = iStart; i < nsd.length; i++)
-  {
-    var daysBetween = (nsd[i] - boundLower) / 86400000 - 1;
-    boundLower = nsd[i];
-    ret += daysBetween;
-  }
+  // Find the applicable number of non-school days between today and the
+  // graduation day
+  for(var i = nsdStart; i < nsd.length; i++)
+    diff++;
 
-  return ret;
+  return daysBetween - diff;
 }
 
 module.exports = {
