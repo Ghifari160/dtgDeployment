@@ -1,5 +1,5 @@
 // daysTillGrad
-// A countdown until graduation for Maine West High School Class of 2019
+// Countdown until graduation for Maine West High School Class of 2019
 //
 // File Name: src/styles/style.scss
 // Description: Mostly parametric Sass stylesheet for the web app
@@ -30,13 +30,13 @@ html, body
   display: none;
 }
 
-.modal
+.modal-warning
 {
   @extend %modal-base;
 
-  z-index: 1000;
+  z-index: 2000;
 
-  background: $modal-background;
+  background: $modal-warning-background;
 
   @media screen and (max-width: 319px),
   (max-height: 259px)
@@ -45,11 +45,11 @@ html, body
   }
 }
 
-.modal-wrapper
+.modal-warning-wrapper
 {
   @extend %modal-base;
 
-  z-index: 1100;
+  z-index: 2100;
 
   @media screen and (max-width: 319px),
   (max-height: 259px)
@@ -66,11 +66,113 @@ html, body
     height: auto;
 
     text-align: center;
-    font-size: $modal-wrapper-title-font-size;
+    font-size: $modal-warning-wrapper-title-font-size;
 
-    color: $modal-wrapper-title-color;
+    color: $modal-warning-wrapper-title-color;
 
     transform: translateY(-50%);
+  }
+}
+
+.modal
+{
+  @extend %modal-base;
+
+  z-index: 1000;
+
+  background: $modal-background;
+}
+
+.modal-wrapper
+
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1100;
+
+  display: none;
+
+  width: $modal-wrapper-total-width - 2 * $modal-wrapper-padding;
+
+  padding: $modal-wrapper-padding;
+
+  border-radius: $modal-wrapper-border-radius;
+  @include box-shadow($modal-wrapper-box-shadow-h-offset,
+      $modal-wrapper-box-shadow-v-offset, $modal-wrapper-box-shadow-blur,
+      $modal-wrapper-box-shadow-spread, $modal-wrapper-box-shadow-color);
+
+  background: $modal-wrapper-background;
+
+  transform: translate(-50%, -50%);
+
+  div, pre
+  {
+    margin-bottom: $modal-wrapper-child-margin-bottom;
+  }
+
+  div:last-child, pre:last-child
+  {
+    margin-bottom: 0;
+  }
+
+  .title
+  {
+    width: 100%;
+    font-family: $modal-wrapper-title-font-family;
+    font-size: 150%;
+    text-align: center;
+  }
+
+  .pre
+  {
+    width: $modal-wrapper-pre-total-width - 2 * $modal-wrapper-pre-padding;
+    height: auto;
+    padding: $modal-wrapper-pre-padding;
+    background: $modal-wrapper-pre-background;
+    overflow: auto;
+    white-space: pre;
+    font-family: $modal-wrapper-pre-font-family;
+
+    @media screen and (min-width: 320px)
+    {
+      font-size: $modal-wrapper-pre-max-font-size - 10%;
+    }
+
+    @media screen and (min-width: 768px)
+    {
+      font-size: $modal-wrapper-pre-max-font-size;
+    }
+
+    @media screen and (min-height: 260px)
+    {
+      max-height: $modal-wrapper-pre-max-height * 0.250;
+    }
+
+    @media screen and (min-height: 320px)
+    {
+      max-height: $modal-wrapper-pre-max-height * 0.333;
+    }
+
+    @media screen and (min-height: 440px)
+    {
+      max-height: $modal-wrapper-pre-max-height * 0.500;
+    }
+
+    @media screen and (min-height: 560px)
+    {
+      max-height: $modal-wrapper-pre-max-height * 0.667;
+    }
+
+    @media screen and (min-height: 680px)
+    {
+      max-height: $modal-wrapper-pre-max-height * 0.833;
+    }
+
+    @media screen and (min-height: 800px)
+    {
+      max-height: $modal-wrapper-pre-max-height;
+    }
   }
 }
 

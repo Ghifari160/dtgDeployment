@@ -1,0 +1,40 @@
+All notable changes to this project will be documented in this file.
+
+The format is based on Keep a Changelog v1.0.0
+(https://keepachangelog.com/en/1.0.0/), slightly modified to fit the needs of
+this project. This project adheres to Semantic Versioning v2.0.0
+(https://semver.org/spec/v2.0.0.html).
+
+All release dates are formatted as such: MM/DD/YYYY
+
+## v0.2.0-2019.4.21.8dae2e - 4/DD/2019
+### Added
+ - Changelog viewer
+ - Roadmap footer link
+ - Footer link to feedback Google Form
+
+### Changed
+ - Source code footer link now opens in a new tab
+
+## v0.2.0-2019.4.20.d77fb6 - 4/20/2019
+### Added
+ - UI scaling
+ - More UI customization parameters (in Sass)
+ - Build scripts to update package.json and add copyright declaration to app.js
+
+## v0.2.0-2019.4.20.a8fbf6 - 4/20/2019
+### Fixed
+ - School days countdown one day too fast on Saturdays.
+
+## v0.2.0-2019.4.14.62ec2a - 4/14/2019
+### Changed
+ - School days countdown calculation algorithm
+
+## v0.2.0-2019.4.5.8dbe52 - 4/5/2019
+### Added
+ - Countdown mode (calendar / school days) toggle button with the appropriate
+   icons
+
+## v0.2.0-2019.4.4.227d04 - 4/4/2019
+### Added
+ - School days countdown to graduation.

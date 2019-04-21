@@ -1,7 +1,7 @@
 {
   "name": "daystillgrad",
-  "version": "v0.2.0-2019.4.20.d77fb6",
-  "description": "",
+  "version": "v0.2.0-2019.4.21.8dae2e",
+  "description": "Countdown until graduation for Maine West High School Class of 2019",
   "private": true,
   "author": "GHIFARI160",
   "license": "MIT",
@@ -15,10 +15,11 @@
   "devDependencies": {
     "css-loader": "^2.1.1",
     "node-sass": "^4.11.0",
+    "raw-loader": "^2.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
   }
 }

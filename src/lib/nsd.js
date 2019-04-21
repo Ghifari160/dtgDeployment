@@ -1,5 +1,5 @@
 // daysTillGrad
-// A countdown until graduation for Maine West High School Class of 2019
+// Countdown until graduation for Maine West High School Class of 2019
 //
 // File Name: src/lib/nsd.js
 // Description: Non-school days index library

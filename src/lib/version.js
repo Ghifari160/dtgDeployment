@@ -1,5 +1,5 @@
 // daysTillGrad
-// A countdown until graduation for Maine West High School Class of 2019
+// Countdown until graduation for Maine West High School Class of 2019
 //
 // File Name: src/lib/version.js
 // Description: App versioning library. This library complies with Semantic
@@ -12,7 +12,7 @@ const version = {
   major: 0,
   minor: 2,
   patch: 0,
-  prerelease: [2019, 4, 20, "d7 7f b6 "],
+  prerelease: [2019, 4, 21, "8d ae 2e "],
   meta: [],
 
   getPreRelease: function()

@@ -1,5 +1,5 @@
 // daysTillGrad
-// A countdown until graduation for Maine West High School Class of 2019
+// Countdown until graduation for Maine West High School Class of 2019
 //
 // File Name: src/styles/_params.scss
 // Description: Partial Sass file for hosting app's stylesheet parameters
@@ -7,9 +7,33 @@
 // (c) 2019 GHIFARI160. All rights reserved.
 // Distributed under the terms of the MIT License
 
-$modal-background: #0077C0;
-$modal-wrapper-title-font-size: 1.5em;
-$modal-wrapper-title-color: #fff;
+$modal-warning-background: #0077C0;
+$modal-warning-wrapper-title-font-size: 1.5em;
+$modal-warning-wrapper-title-color: #fff;
+
+$modal-background: rgba(255,255,255,0.700);
+
+$modal-wrapper-total-width: 70%;
+$modal-wrapper-padding: 1%;
+$modal-wrapper-border-radius: 3px;
+
+$modal-wrapper-box-shadow-h-offset: 0;
+$modal-wrapper-box-shadow-v-offset: 0;
+$modal-wrapper-box-shadow-blur: 20px;
+$modal-wrapper-box-shadow-spread: 0;
+$modal-wrapper-box-shadow-color: rgba(0, 119, 192, 0.750);
+$modal-wrapper-background: #fff;
+
+$modal-wrapper-child-margin-bottom: 1%;
+
+$modal-wrapper-title-font-family: Arial;
+
+$modal-wrapper-pre-total-width: 100%;
+$modal-wrapper-pre-max-height: 600px;
+$modal-wrapper-pre-padding: 1%;
+$modal-wrapper-pre-font-family: monospace;
+$modal-wrapper-pre-max-font-size: 90%;
+$modal-wrapper-pre-background: #e5e7ea;
 
 $wrapper-background: #fff;
 $wrapper-a-color: inherit;

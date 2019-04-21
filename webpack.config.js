@@ -13,13 +13,24 @@ module.exports = {
         use: [
           {loader: "style-loader"},
           {loader: "css-loader"},
-          {loader: "sass-loader"}
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("node-sass")
+            }
+          }
         ]
       },
       {
         test: /\.svg$/,
         use: [
           {loader: "svg-url-loader?stripdeclarations&encoding=base64"}
+        ]
+      },
+      {
+        test: /CHANGELOG$/,
+        use: [
+          {loader: "raw-loader"}
         ]
       }
     ]
