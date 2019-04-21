@@ -1,3 +1,12 @@
+// daysTillGrad
+// A countdown until graduation for Maine West High School Class of 2019
+//
+// File Name: src/js/index.js
+// Description: Web app script
+//
+// (c) 2019 GHIFARI160. All rights reserved.
+// Distributed under the terms of the MIT License
+
 import "../styles/style.scss";
 
 const util = require("util");
@@ -7,6 +16,7 @@ const lib = require("../lib/lib.js"),
 
 function onload()
 {
+  var body = document.getElementsByTagName("body")[0];
   var wrapper = document.getElementsByClassName("wrapper")[0];
   var countdownBox = wrapper.getElementsByClassName("countdown-box")[0];
   var title = countdownBox.getElementsByClassName("title")[0];
@@ -26,7 +36,6 @@ function onload()
 
       countdown.innerHTML = lib.schoolDaysTillGrad();
       title.innerHTML = "School Days Until Graduation";
-      title.classList.add("smaller");
 
       interval = setInterval(function()
       {
@@ -42,7 +51,6 @@ function onload()
 
       countdown.innerHTML = lib.daysTillGrad();
       title.innerHTML = "Days Until Graduation";
-      title.classList.remove("smaller");
 
       interval = setInterval(function()
       {

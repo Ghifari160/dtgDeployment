@@ -1,3 +1,12 @@
+// daysTillGrad
+// A countdown until graduation for Maine West High School Class of 2019
+//
+// File Name: src/styles/style.scss
+// Description: Mostly parametric Sass stylesheet for the web app
+//
+// (c) 2019 GHIFARI160. All rights reserved.
+// Distributed under the terms of the MIT License
+
 @import "mixins";
 @import "params";
 
@@ -7,6 +16,62 @@ html, body
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+%modal-base
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+}
+
+.modal
+{
+  @extend %modal-base;
+
+  z-index: 1000;
+
+  background: $modal-background;
+
+  @media screen and (max-width: 319px),
+  (max-height: 259px)
+  {
+    display: block;
+  }
+}
+
+.modal-wrapper
+{
+  @extend %modal-base;
+
+  z-index: 1100;
+
+  @media screen and (max-width: 319px),
+  (max-height: 259px)
+  {
+    display: block;
+  }
+
+  .title
+  {
+    position: absolute;
+    top: 50%;
+
+    width: 100%;
+    height: auto;
+
+    text-align: center;
+    font-size: $modal-wrapper-title-font-size;
+
+    color: $modal-wrapper-title-color;
+
+    transform: translateY(-50%);
+  }
 }
 
 .wrapper
@@ -41,7 +106,7 @@ html, body
   {
     position: relative;
     top: 50%;
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     transform: translateY(-50%);
 
@@ -53,6 +118,306 @@ html, body
         $countdown-box-box-shadow-blur,
         $countdown-box-box-shadow-spread,
         $countdown-box-box-shadow-color);
+
+    @media screen and (min-width: 320px)
+    and (min-height: 260px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.360,
+          $countdown-box-box-shadow-v-offset * 0.360,
+          $countdown-box-box-shadow-blur * 0.360,
+          $countdown-box-box-shadow-spread * 0.360,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 375px) and (max-width: 767px)
+    and (min-height: 300px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.420,
+          $countdown-box-box-shadow-v-offset * 0.420,
+          $countdown-box-box-shadow-blur * 0.420,
+          $countdown-box-box-shadow-spread * 0.420,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 425px) and (max-width: 767px)
+    and (min-height: 330px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.480,
+          $countdown-box-box-shadow-v-offset * 0.480,
+          $countdown-box-box-shadow-blur * 0.480,
+          $countdown-box-box-shadow-spread * 0.480,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px)
+    and (min-height: 310px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.360,
+          $countdown-box-box-shadow-v-offset * 0.360,
+          $countdown-box-box-shadow-blur * 0.360,
+          $countdown-box-box-shadow-spread * 0.360,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px)
+    and (min-height: 350px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.480,
+          $countdown-box-box-shadow-v-offset * 0.480,
+          $countdown-box-box-shadow-blur * 0.480,
+          $countdown-box-box-shadow-spread * 0.480,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px)
+    and (min-height: 530px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.800,
+          $countdown-box-box-shadow-v-offset * 0.800,
+          $countdown-box-box-shadow-blur * 0.800,
+          $countdown-box-box-shadow-spread * 0.800,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px)
+    and (min-height: 579px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.900,
+          $countdown-box-box-shadow-v-offset * 0.900,
+          $countdown-box-box-shadow-blur * 0.900,
+          $countdown-box-box-shadow-spread * 0.900,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 260px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.200,
+          $countdown-box-box-shadow-v-offset * 0.200,
+          $countdown-box-box-shadow-blur * 0.200,
+          $countdown-box-box-shadow-spread * 0.200,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 310px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.300,
+          $countdown-box-box-shadow-v-offset * 0.300,
+          $countdown-box-box-shadow-blur * 0.300,
+          $countdown-box-box-shadow-spread * 0.300,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 360px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.400,
+          $countdown-box-box-shadow-v-offset * 0.400,
+          $countdown-box-box-shadow-blur * 0.400,
+          $countdown-box-box-shadow-spread * 0.400,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 410px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.500,
+          $countdown-box-box-shadow-v-offset * 0.500,
+          $countdown-box-box-shadow-blur * 0.500,
+          $countdown-box-box-shadow-spread * 0.500,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 460px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.600,
+          $countdown-box-box-shadow-v-offset * 0.600,
+          $countdown-box-box-shadow-blur * 0.600,
+          $countdown-box-box-shadow-spread * 0.600,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 530px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.700,
+          $countdown-box-box-shadow-v-offset * 0.700,
+          $countdown-box-box-shadow-blur * 0.700,
+          $countdown-box-box-shadow-spread * 0.700,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 580px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.800,
+          $countdown-box-box-shadow-v-offset * 0.800,
+          $countdown-box-box-shadow-blur * 0.800,
+          $countdown-box-box-shadow-spread * 0.800,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 630px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.900,
+          $countdown-box-box-shadow-v-offset * 0.900,
+          $countdown-box-box-shadow-blur * 0.900,
+          $countdown-box-box-shadow-spread * 0.900,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 680px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.000,
+          $countdown-box-box-shadow-v-offset * 1.000,
+          $countdown-box-box-shadow-blur * 1.000,
+          $countdown-box-box-shadow-spread * 1.000,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 730px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.200,
+          $countdown-box-box-shadow-v-offset * 1.100,
+          $countdown-box-box-shadow-blur * 1.100,
+          $countdown-box-box-shadow-spread * 1.100,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1439px)
+    and (min-height: 780px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.200,
+          $countdown-box-box-shadow-v-offset * 1.200,
+          $countdown-box-box-shadow-blur * 1.200,
+          $countdown-box-box-shadow-spread * 1.200,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 260px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.200,
+          $countdown-box-box-shadow-v-offset * 0.200,
+          $countdown-box-box-shadow-blur * 0.200,
+          $countdown-box-box-shadow-spread * 0.200,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 320)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.300,
+          $countdown-box-box-shadow-v-offset * 0.300,
+          $countdown-box-box-shadow-blur * 0.300,
+          $countdown-box-box-shadow-spread * 0.300,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 370px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.400,
+          $countdown-box-box-shadow-v-offset * 0.400,
+          $countdown-box-box-shadow-blur * 0.400,
+          $countdown-box-box-shadow-spread * 0.400,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 430px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.500,
+          $countdown-box-box-shadow-v-offset * 0.500,
+          $countdown-box-box-shadow-blur * 0.500,
+          $countdown-box-box-shadow-spread * 0.500,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 480px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.600,
+          $countdown-box-box-shadow-v-offset * 0.600,
+          $countdown-box-box-shadow-blur * 0.600,
+          $countdown-box-box-shadow-spread * 0.600,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 530px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.700,
+          $countdown-box-box-shadow-v-offset * 0.700,
+          $countdown-box-box-shadow-blur * 0.700,
+          $countdown-box-box-shadow-spread * 0.700,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 590px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.800,
+          $countdown-box-box-shadow-v-offset * 0.800,
+          $countdown-box-box-shadow-blur * 0.800,
+          $countdown-box-box-shadow-spread * 0.800,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 640px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 0.900,
+          $countdown-box-box-shadow-v-offset * 0.900,
+          $countdown-box-box-shadow-blur * 0.900,
+          $countdown-box-box-shadow-spread * 0.900,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 690px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.000,
+          $countdown-box-box-shadow-v-offset * 1.000,
+          $countdown-box-box-shadow-blur * 1.000,
+          $countdown-box-box-shadow-spread * 1.000,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 750px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.100,
+          $countdown-box-box-shadow-v-offset * 1.100,
+          $countdown-box-box-shadow-blur * 1.100,
+          $countdown-box-box-shadow-spread * 1.100,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 800px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.200,
+          $countdown-box-box-shadow-v-offset * 1.200,
+          $countdown-box-box-shadow-blur * 1.200,
+          $countdown-box-box-shadow-spread * 1.200,
+          $countdown-box-box-shadow-color);
+    }
+
+    @media screen and (min-width: 1440px)
+    and (min-height: 850px)
+    {
+      @include box-shadow($countdown-box-box-shadow-h-offset * 1.300,
+          $countdown-box-box-shadow-v-offset * 1.300,
+          $countdown-box-box-shadow-blur * 1.300,
+          $countdown-box-box-shadow-spread * 1.300,
+          $countdown-box-box-shadow-color);
+    }
 
     %child
     {
@@ -67,14 +432,194 @@ html, body
       @extend %child;
       font-size: $countdown-box-title-font-size;
       color: $countdown-box-title-color;
+
+      @media screen and (min-width: 320px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-title-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 375px) and (max-width: 767px)
+      and (min-height: 300px)
+      {
+        font-size: $countdown-box-title-font-size * 0.420;
+      }
+
+      @media screen and (min-width: 425px) and (max-width: 767px)
+      and (min-height: 330px)
+      {
+        font-size: $countdown-box-title-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-title-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 350px)
+      {
+        font-size: $countdown-box-title-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-title-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 579px)
+      {
+        font-size: $countdown-box-title-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-title-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-title-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 360px)
+      {
+        font-size: $countdown-box-title-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 410px)
+      {
+        font-size: $countdown-box-title-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 460px)
+      {
+        font-size: $countdown-box-title-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-title-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 580px)
+      {
+        font-size: $countdown-box-title-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 630px)
+      {
+        font-size: $countdown-box-title-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 680px)
+      {
+        font-size: $countdown-box-title-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 730px)
+      {
+        font-size: $countdown-box-title-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 780px)
+      {
+        font-size: $countdown-box-title-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-title-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 320px)
+      {
+        font-size: $countdown-box-title-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 370px)
+      {
+        font-size: $countdown-box-title-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 430px)
+      {
+        font-size: $countdown-box-title-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 480px)
+      {
+        font-size: $countdown-box-title-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-title-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 590px)
+      {
+        font-size: $countdown-box-title-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 640px)
+      {
+        font-size: $countdown-box-title-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 690px)
+      {
+        font-size: $countdown-box-title-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 750px)
+      {
+        font-size: $countdown-box-title-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 800px)
+      {
+        font-size: $countdown-box-title-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 850px)
+      {
+        font-size: $countdown-box-title-font-size * 1.300;
+      }
     }
 
-    .title.smaller
-    {
-      @extend %child;
-      font-size: $countdown-box-title-smaller-font-size;
-      color: $countdown-box-title-color;
-    }
+    // .title.smaller
+    // {
+    //   @extend %child;
+    //   font-size: $countdown-box-title-font-size * 1;
+    //   color: $countdown-box-title-color;
+    // }
 
     .countdown
     {
@@ -82,6 +627,186 @@ html, body
       font-size: $countdown-box-countdown-font-size;
       color: $countdown-box-countdown-color;
       background: $countdown-box-countdown-background;
+
+      @media screen and (min-width: 320px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 375px) and (max-width: 767px)
+      and (min-height: 300px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.420;
+      }
+
+      @media screen and (min-width: 425px) and (max-width: 767px)
+      and (min-height: 330px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 350px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 579px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 360px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 410px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 460px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 580px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 630px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 680px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 730px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 780px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 320px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 370px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 430px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 480px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 590px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 640px)
+      {
+        font-size: $countdown-box-countdown-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 690px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 750px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 800px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 850px)
+      {
+        font-size: $countdown-box-countdown-font-size * 1.300;
+      }
     }
 
     .footer
@@ -90,9 +815,369 @@ html, body
       font-size: $countdown-box-footer-font-size;
       color: $countdown-box-footer-color;
 
+      @media screen and (min-width: 320px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 375px) and (max-width: 767px)
+      and (min-height: 300px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.420;
+      }
+
+      @media screen and (min-width: 425px) and (max-width: 767px)
+      and (min-height: 330px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.360;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 350px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.480;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 768px) and (max-width: 1023px)
+      and (min-height: 579px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 310px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 360px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 410px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 460px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 580px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 630px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 680px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1024px) and (max-width: 1439px)
+      and (min-height: 730px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1024px)
+      and (min-height: 780px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 260px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 320px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.300;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 370px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.400;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 430px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.500;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 480px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.600;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 530px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.700;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 590px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.800;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 640px)
+      {
+        font-size: $countdown-box-footer-font-size * 0.900;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 690px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.000;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 750px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.100;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 800px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.200;
+      }
+
+      @media screen and (min-width: 1440px)
+      and (min-height: 850px)
+      {
+        font-size: $countdown-box-footer-font-size * 1.300;
+      }
+
       div
       {
-        margin-bottom: 10px;
+        margin-bottom: $footer-child-margin-bottom;
+
+        @media screen and (min-width: 320px)
+        and (min-height: 260px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.360;
+        }
+
+        @media screen and (min-width: 375px) and (max-width: 767px)
+        and (min-height: 300px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.420;
+        }
+
+        @media screen and (min-width: 425px) and (max-width: 767px)
+        and (min-height: 330px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.480;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 310px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.360;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 350px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.480;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 530px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.800;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 579px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.900;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 260px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.200;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 310px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.300;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 360px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.400;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 410px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.500;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 460px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.600;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 530px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.700;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 580px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.800;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 630px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.900;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 680px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.000;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 730px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.100;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 780px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 260px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 320px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.300;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 370px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.400;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 430px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.500;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 480px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.600;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 530px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.700;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 590px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.800;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 640px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 0.900;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 690px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.000;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 750px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.100;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 800px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 850px)
+        {
+          margin-bottom: $footer-child-margin-bottom * 1.300;
+        }
       }
 
       div:last-child
@@ -102,19 +1187,436 @@ html, body
 
       .buttons
       {
-        height: 32px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-        text-align: center;
+        height: $footer-buttons-height;
+        text-align: $footer-buttons-horizontal-align;
+
+        @media screen and (min-width: 320px)
+        and (min-height: 260px)
+        {
+          height: $footer-buttons-height * 0.360;
+        }
+
+        @media screen and (min-width: 375px) and (max-width: 767px)
+        and (min-height: 300px)
+        {
+          height: $footer-buttons-height * 0.420;
+        }
+
+        @media screen and (min-width: 425px) and (min-height: 330px)
+        {
+          height: $footer-buttons-height * 0.480;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 310px)
+        {
+          height: $footer-buttons-height * 0.360;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 350px)
+        {
+          height: $footer-buttons-height * 0.480;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 530px)
+        {
+          height: $footer-buttons-height * 0.800;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px)
+        and (min-height: 579px)
+        {
+          height: $footer-buttons-height * 0.900;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 260px)
+        {
+          height: $footer-buttons-height * 0.200;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 310px)
+        {
+          height: $footer-buttons-height * 0.300;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 360px)
+        {
+          height: $footer-buttons-height * 0.400;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 410px)
+        {
+          height: $footer-buttons-height * 0.500;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 460px)
+        {
+          height: $footer-buttons-height * 0.600;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 530px)
+        {
+          height: $footer-buttons-height * 0.700;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 580px)
+        {
+          height: $footer-buttons-height * 0.800;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 630px)
+        {
+          height: $footer-buttons-height * 0.900;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 680px)
+        {
+          height: $footer-buttons-height * 1.000;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 730px)
+        {
+          height: $footer-buttons-height * 1.100;
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 1439px)
+        and (min-height: 780px)
+        {
+          height: $footer-buttons-height * 1.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 260px)
+        {
+          height: $footer-buttons-height * 0.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 320px)
+        {
+          height: $footer-buttons-height * 0.300;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 370px)
+        {
+          height: $footer-buttons-height * 0.400;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 430px)
+        {
+          height: $footer-buttons-height * 0.500;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 480px)
+        {
+          height: $footer-buttons-height * 0.600;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 530px)
+        {
+          height: $footer-buttons-height * 0.700;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 590px)
+        {
+          height: $footer-buttons-height * 0.800;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 640px)
+        {
+          height: $footer-buttons-height * 0.900;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 690px)
+        {
+          height: $footer-buttons-height * 1.000;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 750px)
+        {
+          height: $footer-buttons-height * 1.100;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 800px)
+        {
+          height: $footer-buttons-height * 1.200;
+        }
+
+        @media screen and (min-width: 1440px)
+        and (min-height: 850px)
+        {
+          height: $footer-buttons-height * 1.300;
+        }
 
         %btn
         {
-          display: inline-block;
-          vertical-align: top;
-          width: 50px;
-          height: 50px;
-          margin-right: 5px;
-          cursor: pointer;
+          display: $footer-buttons-display;
+          vertical-align: $footer-buttons-vertical-align;
+          width: $footer-buttons-width;
+          height: $footer-buttons-height;
+          margin-right: $footer-buttons-margin-right;
+          cursor: $footer-buttons-cursor;
+
+          @media screen and (min-width: 320px)
+          and (min-height: 260px)
+          {
+            width: $footer-buttons-width * 0.360;
+            height: $footer-buttons-height * 0.360;
+            margin-right: $footer-buttons-margin-right * 0.360;
+          }
+
+          @media screen and (min-width: 375px) and (max-width: 767px)
+          and (min-height: 300px)
+          {
+            width: $footer-buttons-width * 0.420;
+            height: $footer-buttons-height * 0.420;
+            margin-right: $footer-buttons-margin-right * 0.420;
+          }
+
+          @media screen and (min-width: 425px) and (max-width: 767px)
+          and (min-height: 330px)
+          {
+            width: $footer-buttons-width * 0.480;
+            height: $footer-buttons-height * 0.480;
+            margin-right: $footer-buttons-margin-right * 0.480;
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 310px)
+          {
+            width: $footer-buttons-width * 0.360;
+            height: $footer-buttons-height * 0.360;
+            margin-right: $footer-buttons-margin-right * 0.360;
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 350px)
+          {
+            width: $footer-buttons-width * 0.480;
+            height: $footer-buttons-height * 0.480;
+            margin-right: $footer-buttons-margin-right * 0.480;
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 530px)
+          {
+            width: $footer-buttons-width * 0.800;
+            height: $footer-buttons-height * 0.800;
+            margin-right: $footer-buttons-margin-right * 0.800;
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 579px)
+          {
+            width: $footer-buttons-width * 0.900;
+            height: $footer-buttons-height * 0.900;
+            margin-right: $footer-buttons-margin-right * 0.900;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 260px)
+          {
+            width: $footer-buttons-width * 0.200;
+            height: $footer-buttons-height * 0.200;
+            margin-right: $footer-buttons-margin-right * 0.200;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 310px)
+          {
+            width: $footer-buttons-width * 0.300;
+            height: $footer-buttons-height * 0.300;
+            margin-right: $footer-buttons-margin-right * 0.300;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 360px)
+          {
+            width: $footer-buttons-width * 0.400;
+            height: $footer-buttons-height * 0.400;
+            margin-right: $footer-buttons-margin-right * 0.400;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 410px)
+          {
+            width: $footer-buttons-width * 0.500;
+            height: $footer-buttons-height * 0.500;
+            margin-right: $footer-buttons-margin-right * 0.500;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 460px)
+          {
+            width: $footer-buttons-width * 0.600;
+            height: $footer-buttons-height * 0.600;
+            margin-right: $footer-buttons-margin-right * 0.600;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 530px)
+          {
+            width: $footer-buttons-width * 0.700;
+            height: $footer-buttons-height * 0.700;
+            margin-right: $footer-buttons-margin-right * 0.700;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 580px)
+          {
+            width: $footer-buttons-width * 0.800;
+            height: $footer-buttons-height * 0.800;
+            margin-right: $footer-buttons-margin-right * 0.800;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 630px)
+          {
+            width: $footer-buttons-width * 0.900;
+            height: $footer-buttons-height * 0.900;
+            margin-right: $footer-buttons-margin-right * 0.900;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 680px)
+          {
+            width: $footer-buttons-width * 1.000;
+            height: $footer-buttons-height * 1.000;
+            margin-right: $footer-buttons-margin-right * 1.000;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 730px)
+          {
+            width: $footer-buttons-width * 1.100;
+            height: $footer-buttons-height * 1.100;
+            margin-right: $footer-buttons-margin-right * 1.100;
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 780px)
+          {
+            width: $footer-buttons-width * 1.200;
+            height: $footer-buttons-height * 1.200;
+            margin-right: $footer-buttons-margin-right * 1.200;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 260px)
+          {
+            width: $footer-buttons-width * 0.200;
+            height: $footer-buttons-height * 0.200;
+            margin-right: $footer-buttons-margin-right * 0.200;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 320px)
+          {
+            width: $footer-buttons-width * 0.300;
+            height: $footer-buttons-height * 0.300;
+            margin-right: $footer-buttons-margin-right * 0.300;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 370px)
+          {
+            width: $footer-buttons-width * 0.400;
+            height: $footer-buttons-height * 0.400;
+            margin-right: $footer-buttons-margin-right * 0.400;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 430px)
+          {
+            width: $footer-buttons-width * 0.500;
+            height: $footer-buttons-height * 0.500;
+            margin-right: $footer-buttons-margin-right * 0.500;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 480px)
+          {
+            width: $footer-buttons-width * 0.600;
+            height: $footer-buttons-height * 0.600;
+            margin-right: $footer-buttons-margin-right * 0.600;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 530px)
+          {
+            width: $footer-buttons-width * 0.700;
+            height: $footer-buttons-height * 0.700;
+            margin-right: $footer-buttons-margin-right * 0.700;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 590px)
+          {
+            width: $footer-buttons-width * 0.800;
+            height: $footer-buttons-height * 0.800;
+            margin-right: $footer-buttons-margin-right * 0.800;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 640px)
+          {
+            width: $footer-buttons-width * 0.900;
+            height: $footer-buttons-height * 0.900;
+            margin-right: $footer-buttons-margin-right * 0.900;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 690px)
+          {
+            width: $footer-buttons-width * 1.000;
+            height: $footer-buttons-height * 1.000;
+            margin-right: $footer-buttons-margin-right * 1.000;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 750px)
+          {
+            width: $footer-buttons-width * 1.100;
+            height: $footer-buttons-height * 1.100;
+            margin-right: $footer-buttons-margin-right * 1.100;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 800px)
+          {
+            width: $footer-buttons-width * 1.200;
+            height: $footer-buttons-height * 1.200;
+            margin-right: $footer-buttons-margin-right * 1.200;
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 850px)
+          {
+            width: $footer-buttons-width * 1.300;
+            height: $footer-buttons-height * 1.300;
+            margin-right: $footer-buttons-margin-right * 1.300;
+          }
         }
 
         %btn:last-child
@@ -125,17 +1627,439 @@ html, body
         .school-days
         {
           @extend %btn;
-          background: url("../images/school-day.svg");
-          background-size: 50px 50px;
-          background-position: center center;
+          background: $footer-buttons-school-days-background;
+          background-size: $footer-buttons-background-size;
+          background-position: $footer-buttons-background-position-x
+              $footer-buttons-background-position-y;
+
+          @media screen and (min-width: 320px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.360)
+                ($footer-buttons-background-position-y * 0.360);
+          }
+
+          @media screen and (min-width: 375px) and (max-width: 767px)
+          and (min-height: 300px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.420)
+                ($footer-buttons-background-position-y * 0.420);
+          }
+
+          @media screen and (min-width: 425px) and (max-width: 767px)
+          and (min-height: 330px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.480)
+                ($footer-buttons-background-position-y * 0.480);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 310px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.360)
+                ($footer-buttons-background-position-y * 0.360);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 350px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.480)
+                ($footer-buttons-background-position-y * 0.480);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 579px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.200)
+                ($footer-buttons-background-position-y * 0.200);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 310px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.300)
+                ($footer-buttons-background-position-y * 0.300);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 360px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.400)
+                ($footer-buttons-background-position-y * 0.400);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 410px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.500)
+                ($footer-buttons-background-position-y * 0.500);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 460px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.600)
+                ($footer-buttons-background-position-y * 0.600);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.700)
+                ($footer-buttons-background-position-y * 0.700);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 580px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 630px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 680px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.000)
+                ($footer-buttons-background-position-y * 1.000);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 730px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.100)
+                ($footer-buttons-background-position-y * 1.100);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 780px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.200)
+                ($footer-buttons-background-position-y * 1.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.200)
+                ($footer-buttons-background-position-y * 0.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 320px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.300)
+                ($footer-buttons-background-position-y * 0.300);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 370px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.400)
+                ($footer-buttons-background-position-y * 0.400);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 430px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.500)
+                ($footer-buttons-background-position-y * 0.500);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 480px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.600)
+                ($footer-buttons-background-position-y * 0.600);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.700)
+                ($footer-buttons-background-position-y * 0.700);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 590px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 640px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 690px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.000)
+                ($footer-buttons-background-position-y * 1.000);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 750px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.100)
+                ($footer-buttons-background-position-y * 1.100);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 800px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.200)
+                ($footer-buttons-background-position-y * 1.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 850px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.300)
+                ($footer-buttons-background-position-y * 1.300);
+          }
         }
 
         .calendar-days
         {
           @extend %btn;
-          background: url("../images/calendar-day.svg");
-          background-size: 50px 50px;
-          background-position: center center;
+          background: $footer-buttons-calendar-days-background;
+          background-size: $footer-buttons-background-size;
+          background-position: $footer-buttons-background-position-x
+              $footer-buttons-background-position-y;
+
+          @media screen and (min-width: 320px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.360)
+                ($footer-buttons-background-position-y * 0.360);
+          }
+
+          @media screen and (min-width: 375px) and (max-width: 767px)
+          and (min-height: 300px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.420)
+                ($footer-buttons-background-position-y * 0.420);
+          }
+
+          @media screen and (min-width: 425px) and (max-width: 767px)
+          and (min-height: 330px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.480)
+                ($footer-buttons-background-position-y * 0.480);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 310px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.360)
+                ($footer-buttons-background-position-y * 0.360);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 350px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.480)
+                ($footer-buttons-background-position-y * 0.480);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 768px) and (max-width: 1023px)
+          and (min-height: 579px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.200)
+                ($footer-buttons-background-position-y * 0.200);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 310px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.300)
+                ($footer-buttons-background-position-y * 0.300);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 360px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.400)
+                ($footer-buttons-background-position-y * 0.400);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 410px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.500)
+                ($footer-buttons-background-position-y * 0.500);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 460px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.600)
+                ($footer-buttons-background-position-y * 0.600);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.700)
+                ($footer-buttons-background-position-y * 0.700);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 580px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 630px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 680px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.000)
+                ($footer-buttons-background-position-y * 1.000);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 730px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.100)
+                ($footer-buttons-background-position-y * 1.100);
+          }
+
+          @media screen and (min-width: 1024px) and (max-width: 1439px)
+          and (min-height: 780px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.200)
+                ($footer-buttons-background-position-y * 1.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 260px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.200)
+                ($footer-buttons-background-position-y * 0.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 320px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.300)
+                ($footer-buttons-background-position-y * 0.300);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 370px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.400)
+                ($footer-buttons-background-position-y * 0.400);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 430px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.500)
+                ($footer-buttons-background-position-y * 0.500);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 480px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.600)
+                ($footer-buttons-background-position-y * 0.600);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 530px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.700)
+                ($footer-buttons-background-position-y * 0.700);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 590px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.800)
+                ($footer-buttons-background-position-y * 0.800);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 640px)
+          {
+            background-position: ($footer-buttons-background-position-x * 0.900)
+                ($footer-buttons-background-position-y * 0.900);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 690px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.000)
+                ($footer-buttons-background-position-y * 1.000);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 750px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.100)
+                ($footer-buttons-background-position-y * 1.100);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 800px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.200)
+                ($footer-buttons-background-position-y * 1.200);
+          }
+
+          @media screen and (min-width: 1440px)
+          and (min-height: 850px)
+          {
+            background-position: ($footer-buttons-background-position-x * 1.300)
+                ($footer-buttons-background-position-y * 1.300);
+          }
         }
       }
     }

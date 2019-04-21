@@ -1,3 +1,12 @@
+// daysTillGrad
+// A countdown until graduation for Maine West High School Class of 2019
+//
+// File Name: src/styles/_mixins.scss
+// Description: Partial Sass file for hosting commonly used Mixins
+//
+// (c) 2019 GHIFARI160. All rights reserved.
+// Distributed under the terms of the MIT License
+
 @mixin box-shadow($h-offset, $v-offset, $blur, $spread, $color)
 {
   -webkit-box-shadow: $h-offset $v-offset $blur $spread $color;

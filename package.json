@@ -1,13 +1,16 @@
 {
   "name": "daystillgrad",
-  "version": "0.1.0",
+  "version": "v0.2.0-2019.4.20.d77fb6",
   "description": "",
   "private": true,
   "author": "GHIFARI160",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production"
+    "build:webpack": "webpack --mode production",
+    "build:appjs": "node scripts/build-appjs",
+    "build:version": "node scripts/build-version",
+    "build": "npm run build:webpack && npm run build:appjs && npm run build:version"
   },
   "devDependencies": {
     "css-loader": "^2.1.1",

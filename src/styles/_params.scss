@@ -1,3 +1,16 @@
+// daysTillGrad
+// A countdown until graduation for Maine West High School Class of 2019
+//
+// File Name: src/styles/_params.scss
+// Description: Partial Sass file for hosting app's stylesheet parameters
+//
+// (c) 2019 GHIFARI160. All rights reserved.
+// Distributed under the terms of the MIT License
+
+$modal-background: #0077C0;
+$modal-wrapper-title-font-size: 1.5em;
+$modal-wrapper-title-color: #fff;
+
 $wrapper-background: #fff;
 $wrapper-a-color: inherit;
 $wrapper-a-text-decoration: underline;
@@ -27,5 +40,21 @@ $countdown-box-countdown-font-size: 300px;
 $countdown-box-countdown-color: #0077C0;
 $countdown-box-countdown-background: #37AFF7;
 
-$countdown-box-footer-font-size: 16px;
+$countdown-box-footer-font-size: 20px;
 $countdown-box-footer-color: #37AFF7;
+
+$footer-child-margin-bottom: 5px;
+
+$footer-buttons-width: 50px;
+$footer-buttons-height: 50px;
+$footer-buttons-margin-right: 5px;
+$footer-buttons-display: inline-block;
+$footer-buttons-horizontal-align: center;
+$footer-buttons-vertical-align: top;
+$footer-buttons-background-size: 125%;
+$footer-buttons-background-position-x: 1.5px;
+$footer-buttons-background-position-y: 8px;
+$footer-buttons-cursor: pointer;
+
+$footer-buttons-school-days-background: url("../images/school-day.svg") no-repeat;
+$footer-buttons-calendar-days-background: url("../images/calendar-day.svg") no-repeat;
