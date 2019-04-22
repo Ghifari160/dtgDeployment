@@ -7,7 +7,11 @@ this project. This project adheres to Semantic Versioning v2.0.0
 
 All release dates are formatted as such: MM/DD/YYYY
 
-## v0.2.0-2019.4.21.8dae2e - 4/DD/2019
+## v0.2.0-2019.4.21.24c64d - 4/21/2019
+### Added
+ - Google Analytics tracking of referrals
+
+## v0.2.0-2019.4.21.8dae2e - 4/21/2019
 ### Added
  - Changelog viewer
  - Roadmap footer link

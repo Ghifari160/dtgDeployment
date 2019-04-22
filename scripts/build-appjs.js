@@ -11,7 +11,7 @@
 const fs = require("fs");
 
 const headers = "// daysTillGrad\n"
-              + "// Countdown until graduation for Maine West High School"
+              + "// Countdown until graduation for Maine West High School "
               + "Class of 2019\n"
               + "// (c) 2019 GHIFARI160. All rights reserved.\n"
               + "\n";
