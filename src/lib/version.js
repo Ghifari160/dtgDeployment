@@ -12,8 +12,17 @@ const version = {
   major: 0,
   minor: 2,
   patch: 0,
-  prerelease: [2019, 4, 21, "24 c6 4d "],
+  prerelease: [2019, 4, 23, "f0 1c df "],
   meta: [],
+  changes: [
+    "### Added",
+    " - Footer link to issue tracker",
+    " - New version notice dialog",
+    "",
+    "### Changed",
+    " - School days countdown now accounts for end of school day (3:20 PM)",
+    " - Optimized DOM modifications"
+  ],
 
   getPreRelease: function()
   {

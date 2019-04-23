@@ -13,6 +13,7 @@ const version = require("./version.js");
 const indices =
 {
   feedbackID: "f0901632",
+  issueTrackerID: "7a5b5640",
   roadmapID: "8bf28652",
   sourceCodeID: "0bfa10cb"
 };
@@ -20,6 +21,7 @@ const indices =
 // Base URIs and full URIs
 const feedbackBaseURI = "https://docs.google.com/forms/d/e/1FAIpQLSc4kPVGTqI6of"
                       + "-RN_nG47DUjBJ2xLNiSUNnEaDA4XfrwyagZQ/viewform",
+      issueTrackerURI = "https://github.com/Ghifari160/daysTillGrad/issues",
       roadmapURI = "https://trello.com/b/tuJq1oq0",
       sourceCodeURI = "https://github.com/ghifari160/daystillgrad";
 
@@ -69,6 +71,11 @@ function feedback_generate_uri()
   return feedbackBaseURI + "?" + __feedback_generate_params().join("&");
 }
 
+function issueTracker_generate_uri()
+{
+  return issueTrackerURI;
+}
+
 function roadmap_generate_uri()
 {
   return roadmapURI;
@@ -82,6 +89,7 @@ function sourceCode_generate_uri()
 module.exports = {
   indices: indices,
   feedback_generate_uri: feedback_generate_uri,
+  issueTracker_generate_uri: issueTracker_generate_uri,
   roadmap_generate_uri: roadmap_generate_uri,
   sourceCode_generate_uri: sourceCode_generate_uri
 };
