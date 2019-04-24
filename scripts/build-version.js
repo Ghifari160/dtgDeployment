@@ -9,7 +9,7 @@
 // Distributed under the terms of the MIT License
 
 const fs = require("fs"),
-      version = require("../src/lib/version.js");
+      version = require("../src/lib/version");
 
 var packageStr,
     packageJSON;
@@ -32,7 +32,7 @@ packageJSON.version = version.getVersion();
 fs.writeFileSync("package-lock.json", JSON.stringify(packageJSON, null, 2) + "\n",
     "utf8");
 
-console.log("Writing VERSION...");
-fs.writeFileSync("docs/VERSION", version.getVersion(), "utf8");
+console.log("Writing version.txt...");
+fs.writeFileSync("docs/version.txt", version.getVersion(), "utf8");
 
 console.log("Done!");

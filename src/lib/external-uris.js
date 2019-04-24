@@ -7,7 +7,7 @@
 // (c) 2019 GHIFARI160. All rights reserved.
 // Distributed under the terms of the MIT License
 
-const version = require("./version.js");
+const version = require("./version");
 
 // Configure these IDs appropriately
 const indices =

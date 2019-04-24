@@ -13,7 +13,7 @@ import changelog from "../../CHANGELOG";
 const util = require("util");
 
 const lib = require("../lib/lib.js"),
-      v = require("../lib/version.js"),
+      v = require("../lib/version"),
       eURIs = require("../lib/external-uris.js");
 
 function onload()
@@ -217,10 +217,13 @@ function onload()
     }
   }
 
+  // If the nvd parameters is set, display the new version notice dialog
   if(get_params()["nvd"] !== undefined)
   {
     var content,
         contentChildNodes;
+
+    var childNode;
 
     var contentBody,
         contentBodyA,
@@ -233,24 +236,24 @@ function onload()
     contentBodyA.setAttribute("href", "#7254d9e7");
     contentBodyA.append(document.createTextNode("changelog"));
 
-    contentBody = document.createElement("div");
-    contentBody.setAttribute("class", "content-body");
-    contentBody.append(document.createTextNode("Welcome to a new version of "
+    childNode = document.createElement("div");
+    childNode.setAttribute("class", "content-body");
+    childNode.append(document.createTextNode("Welcome to a new version of "
         + "daysTillGrad! See "));
-    contentBody.append(contentBodyA);
-    contentBody.append(document.createTextNode(" for a list of changes."));
-    contentChildNodes.push(contentBody);
+    childNode.append(contentBodyA);
+    childNode.append(document.createTextNode(" for a list of changes."));
+    contentChildNodes.push(childNode);
 
-    contentPre = document.createElement("pre");
-    contentPre.setAttribute("class", "pre");
-    contentPre.append(document.createTextNode(v.changes.join("\n")));
-    contentChildNodes.push(contentPre);
+    childNode = document.createElement("pre");
+    childNode.setAttribute("class", "pre");
+    childNode.append(document.createTextNode(v.changes.join("\n")));
+    contentChildNodes.push(childNode);
 
-    contentFooter = document.createElement("footer");
-    contentFooter.setAttribute("class", "content-footer");
-    contentFooter.append(document.createTextNode("Click anywhere outside of "
+    childNode = document.createElement("footer");
+    childNode.setAttribute("class", "content-footer");
+    childNode.append(document.createTextNode("Click anywhere outside of "
         + "this box to close this notice."));
-    contentChildNodes.push(contentFooter);
+    contentChildNodes.push(childNode);
 
     content = document.createElement("div");
     content.setAttribute("class", "content");
@@ -260,6 +263,24 @@ function onload()
 
     modal_ui_create("New Version", [content]);
     modal_ui_show();
+  }
+
+  // Version checker callback
+  function version_check(e)
+  {
+    window.location = "/?nvd=true&utm_source=nvu";
+  }
+
+  // Disable the New Version Updater (NVU) if nvu_disable parameter is set
+  // to true
+  if((get_params()["nvu_disable"] !== undefined
+      && get_params()["nvu_disable"] == "false")
+      || get_params()["nvu_disable"] === undefined)
+  {
+    setInterval(function()
+    {
+      v.version_check(v.getVersion(), version_check);
+    }, 60000);
   }
 
   replaceExternalURIs();
