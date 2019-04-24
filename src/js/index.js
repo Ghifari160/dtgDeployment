@@ -279,7 +279,26 @@ function onload()
   {
     setInterval(function()
     {
-      v.version_check(v.getVersion(), version_check);
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", v.host + v.path);
+      xhr.send();
+
+      xhr.onload = function()
+      {
+        if(xhr.status != 200)
+          console.log(xhr);
+        else
+        {
+          if(xhr.response != v.getVersion())
+            version_check(xhr.response);
+        }
+      };
+
+      xhr.onerror = function()
+      {
+        console.log(xhr);
+      };
+      // v.version_check(v.getVersion(), version_check);
     }, 60000);
   }
 

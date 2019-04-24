@@ -17,7 +17,7 @@ const version =
   minor: 2,
   patch: 0,
   prerelease: [2019, 4, 23, "62 b1 8e "],
-  meta: [],
+  meta: ["patch", "40 99 cf "],
   changes: [
     "### Added",
     " - New version checker and updater",

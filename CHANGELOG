@@ -7,7 +7,7 @@ this project. This project adheres to Semantic Versioning v2.0.0
 
 All release dates are formatted as such: MM/DD/YYYY
 
-## v0.2.0-2019.4.23.62b18e - 4/23/2019
+## v0.2.0-2019.4.23.62b18e+patch.4099cf - 4/23/2019
 ### Added
  - New version checker and updater
 
