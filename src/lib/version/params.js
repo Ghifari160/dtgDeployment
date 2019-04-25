@@ -16,14 +16,33 @@ const version =
   major: 0,
   minor: 2,
   patch: 0,
-  prerelease: [2019, 4, 23, "62 b1 8e "],
-  meta: ["patch", "40 99 cf "],
+  prerelease: [],
+  meta: [],
   changes: [
     "### Added",
     " - New version checker and updater",
+    " - Footer link to issue tracker",
+    " - New version notice dialog",
+    " - Google Analytics tracking of referrals",
+    " - Changelog viewer",
+    " - Roadmap footer link",
+    " - Footer link to feedback Google Form",
+    " - UI scaling",
+    " - More UI customization parameters (in Sass)",
+    " - Build scripts to update package.json and add copyright declaration to app.js",
+    " - Countdown mode (calendar / school days) toggle button with the "
+        + "appropriate icons",
+    " - School days countdown to graduation",
     "",
     "### Changed",
-    " - Version library is now fragmented for ease of maintenance"
+    " - School days countdown now accounts for end of school day (3:20 PM)",
+    " - Optimized DOM modifications",
+    " - Source code footer link now opens in a new tab",
+    " - School days countdown calculation algorithm",
+    "",
+    "### Fixed",
+    " - School days countdown one day too fast on Saturdays with the new "
+        + "algorithm"
   ]
 };
 
