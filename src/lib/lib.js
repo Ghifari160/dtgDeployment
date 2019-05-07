@@ -74,6 +74,7 @@ function schoolDaysTillGrad()
 }
 
 module.exports = {
+  getToday: getToday,
   daysTillGrad: daysTillGrad,
   schoolDaysTillGrad: schoolDaysTillGrad
 };

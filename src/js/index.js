@@ -114,6 +114,76 @@ function onload()
       modalWrapper.append(contentDomArr[i]);
   }
 
+  function notice_create(text, duration = 1500)
+  {
+    var dom, textNode;
+
+    textNode = document.createTextNode(text);
+
+    dom = document.createElement("div");
+    dom.className = "notice";
+    dom.append(textNode);
+
+    title.getElementsByClassName("actual")[0].setAttribute("style",
+        "display: none;");
+    title.prepend(dom);
+
+    setTimeout(function()
+    {
+      dom.parentNode.removeChild(dom);
+      title.getElementsByClassName("actual")[0].removeAttribute("style");
+    }, duration);
+  }
+
+  function checkForNotice(date)
+  {
+    var noticeDisplay = false,
+        noticeMessage = "";
+    if(date.getMonth() == 4)
+    {
+      switch(date.getDate())
+      {
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+          noticeDisplay = true;
+          noticeMessage = "Last Full School Week!!!";
+          break;
+
+        case 13:
+          noticeDisplay = true;
+          noticeMessage = "Last School Day!!!";
+          break;
+
+        case 16:
+          noticeDisplay = true;
+          noticeMessage = "Senior BBQ Day";
+          break;
+
+        case 17:
+          noticeDisplay = true;
+          noticeMessage = "Prom Day";
+          break;
+
+        case 19:
+          noticeDisplay = true;
+          noticeMessage = "Happy Graduation Day!!!";
+          break;
+
+        default:
+          noticeDisplay = false;
+          break;
+      }
+
+      if(noticeDisplay)
+        notice_create(noticeMessage, 2500);
+    }
+  }
+
   function replaceExternalURIs()
   {
     var aNodes = document.getElementsByTagName("a");
@@ -184,11 +254,14 @@ function onload()
       dom_remove_child_all(countdown);
       countdown.append(document.createTextNode(lib.schoolDaysTillGrad()));
 
-      dom_remove_child_all(title);
-      title.append(document.createTextNode("School Days Until Graduation"));
+      dom_remove_child_all(title.getElementsByClassName("actual")[0]);
+      title.getElementsByClassName("actual")[0]
+          .append(document.createTextNode("School Days Until Graduation"));
 
       interval = setInterval(function()
       {
+        checkForNotice(lib.getToday());
+
         dom_remove_child_all(countdown);
         countdown.append(document.createTextNode(lib.schoolDaysTillGrad()));
       }, 60000);
@@ -203,11 +276,14 @@ function onload()
       dom_remove_child_all(countdown);
       countdown.append(document.createTextNode(lib.daysTillGrad()));
 
-      dom_remove_child_all(title);
-      title.append(document.createTextNode("Days Until Graduation"));
+      dom_remove_child_all(title.getElementsByClassName("actual")[0]);
+      title.getElementsByClassName("actual")[0]
+          .append(document.createTextNode("Days Until Graduation"));
 
       interval = setInterval(function()
       {
+        checkForNotice(lib.getToday());
+        
         dom_remove_child_all(countdown);
         countdown.append(document.createTextNode(lib.daysTillGrad()));
       }, 60000);
@@ -312,11 +388,15 @@ function onload()
   dom_remove_child_all(version);
   version.append(document.createTextNode(v.getVersion()));
 
+  checkForNotice(lib.getToday());
+
   dom_remove_child_all(countdown);
   countdown.append(document.createTextNode(lib.daysTillGrad()));
 
   interval = setInterval(function()
   {
+    checkForNotice(lib.getToday());
+
     dom_remove_child_all(countdown);
 
     countdown.append(document.createTextNode(lib.daysTillGrad()));
