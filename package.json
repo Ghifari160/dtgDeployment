@@ -6,7 +6,8 @@
   "author": "GHIFARI160",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --mode development --watch",
+    "dev:webpack": "webpack --mode development --watch",
+    "dev:server": "node dev/server",
     "build:webpack": "webpack --mode production",
     "build:appjs": "node scripts/build-appjs",
     "build:version": "node scripts/build-version",
