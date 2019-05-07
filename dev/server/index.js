@@ -25,19 +25,31 @@ console.log(term.foreground.blue + term.bright + "Creating dev server..."
 
 http.createServer(function(req, resp)
 {
-  var dPath = path.resolve(__dirname, params.root, req.url.substring(1));
-  var dStats = stats.statsPath(dPath);
+  var uri, uriParts,
+      url, query;
+
+  var dPath,
+      dStats;
+
+  uri = req.url;
+  uriParts = uri.substring(1).split("?");
+
+  url = uriParts[0];
+  query = (uriParts.length > 1) ? uriParts[1] : undefined;
+
+  dPath = path.resolve(__dirname, params.root, url);
+  dStats = stats.statsPath(dPath);
 
   if(dStats.hasOwnProperty("errno"))
   {
-    console.log(req.url + "\t" + term.foreground.red + dStats.http + term.reset
+    console.log(uri + "\t" + term.foreground.red + dStats.http + term.reset
         + "\t" + dStats.path);
 
     error.generateError(resp, dStats.http);
   }
   else
   {
-    console.log(req.url + "\t" + term.foreground.green + 200 + term.reset
+    console.log(uri + "\t" + term.foreground.green + 200 + term.reset
         + "\t" + dStats.path);
 
     resp.writeHead(200, { "Content-Type": mime.getMimeType(dStats.path) });
