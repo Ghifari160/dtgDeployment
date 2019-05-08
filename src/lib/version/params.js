@@ -16,10 +16,11 @@ const version =
   major: 0,
   minor: 3,
   patch: 0,
-  prerelease: [2019, 5, 7, "8a 75 be "],
-  meta: ["dev"],
+  prerelease: [],
+  meta: [],
   changes: [
-    "Not Available for dev version"
+    "### Added",
+    " - Special events notice"
   ]
 };
 

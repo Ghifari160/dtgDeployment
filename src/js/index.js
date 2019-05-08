@@ -116,6 +116,9 @@ function onload()
 
   function notice_create(text, duration = 1500)
   {
+    var aduration = 125,
+        keyframes = 30;
+
     var dom, textNode;
 
     textNode = document.createTextNode(text);
@@ -124,15 +127,66 @@ function onload()
     dom.className = "notice";
     dom.append(textNode);
 
+    dom.setAttribute("style", "visibility: visible; opacity: 0.000; "
+        + "position: relative; top: -100%;");
     title.getElementsByClassName("actual")[0].setAttribute("style",
-        "display: none;");
+        "visibility: visible; opacity: 1.000; position: relative; top: -100%;");
     title.prepend(dom);
 
+    var inPos = 100,
+        inOpacity = 0.000;
+
+    // Animate in
+    var animation = setInterval(function()
+    {
+      if(inPos > -1)
+      {
+        title.getElementsByClassName("notice")[0].setAttribute("style",
+            "visibility: visible; opacity: " + inOpacity
+            + "; position: relative; top: -" + inPos + "%;");
+        title.getElementsByClassName("actual")[0].setAttribute("style",
+            "visibility: visible; opacity: " + (1 - inOpacity) + "; "
+            + "position: relative; top: -" + inPos + "%;");
+        inPos--;
+        inOpacity += 0.010;
+      }
+      else
+      {
+        title.getElementsByClassName("notice")[0].removeAttribute("style");
+
+        clearInterval(animation);
+      }
+    }, ((1 / keyframes) * aduration));
+
+    // Animate out
     setTimeout(function()
     {
-      dom.parentNode.removeChild(dom);
-      title.getElementsByClassName("actual")[0].removeAttribute("style");
-    }, duration);
+      var pos = 0,
+          opacity = 0.000;
+      var animation = setInterval(function()
+      {
+        if(pos < 101)
+        {
+          title.getElementsByClassName("notice")[0].setAttribute("style",
+              "visibility: visible; opacity: " + (1 - opacity)
+              + "; position: relative; top: -" + pos + "%;");
+          title.getElementsByClassName("actual")[0].setAttribute("style",
+              "visibility: visible; opacity: " + opacity
+              + "; position: relative; top: -" + pos + "%;");
+          pos++;
+          opacity += 0.010;
+        }
+        else
+        {
+          title.getElementsByClassName("notice")[0].removeAttribute("style");
+          title.getElementsByClassName("actual")[0].removeAttribute("style");
+
+          title.removeChild(title.getElementsByClassName("notice")[0]);
+
+          clearInterval(animation);
+        }
+      }, ((1 / keyframes) * aduration));
+    }, (duration - 2 * aduration));
   }
 
   function checkForNotice(date)
@@ -283,7 +337,7 @@ function onload()
       interval = setInterval(function()
       {
         checkForNotice(lib.getToday());
-        
+
         dom_remove_child_all(countdown);
         countdown.append(document.createTextNode(lib.daysTillGrad()));
       }, 60000);
