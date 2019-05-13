@@ -42,9 +42,10 @@ function schoolDaysTillGrad()
 
   // School ends at 3:20 PM. If the current time is ≥ 3:20 PM, add 1 to the
   // difference
-  if(new Date().getHours() > 15)
+  if(today.getDay() != 0 && today.getDay() != 6 && new Date().getHours() > 15)
     diff += 1;
-  else if(new Date().getHours() == 15 && new Date().getMinutes() >= 20)
+  else if(today.getDay() != 0 && today.getDay() != 6
+      && new Date().getHours() == 15 && new Date().getMinutes() >= 20)
     diff += 1;
 
   // Find the number of Saturdays between today and the graduation day

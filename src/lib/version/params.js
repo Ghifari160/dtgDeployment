@@ -15,12 +15,12 @@ const version =
 {
   major: 0,
   minor: 3,
-  patch: 0,
+  patch: 1,
   prerelease: [],
   meta: [],
   changes: [
-    "### Added",
-    " - Special events notice"
+    "### Fixed",
+    " - School days mode miscalculation due to the end-of-school day algorithm"
   ]
 };
 
